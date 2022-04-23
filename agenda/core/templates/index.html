@@ -1,1 +1,16 @@
-{{ compromisso }}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda de compromissos</title>
+</head>
+
+<body>
+    <h1>Apenas teste</h1>
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Registrar compromisso">
+    </form>
+</body>
+</html>
