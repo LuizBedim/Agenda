@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from core import views
-from core.views import AgendaCompromissosCreate
+from django.urls import path, include 
+from core.views import AgendaCompromissosCreate, AgendaCompromissosUpdate
+from core.views import AgendaCompromissosListView, AgendaCompromissosDetailView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', AgendaCompromissosCreate.as_view(), name='home'),
+    path('view/', AgendaCompromissosListView.as_view(), name='view'),
+    path('edit/<int:pk>/', AgendaCompromissosUpdate.as_view(), name='edit'),
 ]

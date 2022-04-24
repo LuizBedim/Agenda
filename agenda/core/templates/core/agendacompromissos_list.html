@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Compromissos cadastrados {% endblock %}
+
+{% block content %}
+    {% for agendacompromissos in agendacompromissos_list %}
+        {{ agendacompromissos.compromisso }} 
+        {{ agendacompromissos.data }}
+        {{ agendacompromissos.hora_inicio }}
+        {{ agendacompromissos.hora_termino }}
+        {{ agendacompromissos.local }}  
+        {{ agendacompromissos.observacoes }} 
+        <br>
+
+    {% endfor %}
+{% endblock %}

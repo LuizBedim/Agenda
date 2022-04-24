@@ -3,10 +3,14 @@ from django.db import models
 
 
 class AgendaCompromissos(models.Model):
+    Agendado = 1
+    Realizado = 2
+    Cancelado = 3
+
     STATUS_CHOICES = (
-        ('a', 'Agendado'),
-        ('r', 'Realizado'),
-        ('c', 'Cancelado'),
+        (Agendado, 'Agendado'),
+        (Realizado, 'Realizado'),
+        (Cancelado, 'Cancelado'),
     )
     
     compromisso = models.CharField(max_length=255)
@@ -18,7 +22,7 @@ class AgendaCompromissos(models.Model):
     observacoes = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return "{} - {} ".format(self.compromisso, self.status)
+        return self.compromisso
     
     class Meta:
         db_table = 'AgendaCompromissos'
