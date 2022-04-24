@@ -1,10 +1,17 @@
-from multiprocessing import context
-from django.shortcuts import render
-from core.forms import AgendaCompromissos
+from re import A
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-def index(request):
-    form = AgendaCompromissos()
-    context = {
-        'form': form
-    }
-    return render(request, 'index.html', context=context)
+from .models import AgendaCompromissos
+
+from django.urls import reverse_lazy
+
+#----- CREATE -----
+class AgendaCompromissosCreate(CreateView):
+    model = AgendaCompromissos
+    fields = ['compromisso', 'data', 'hora_inicio', 'hora_termino', 'local', 'status', 'observacoes']
+    template_name = 'index.html'
+    seccess_url = reverse_lazy('home')
+
+#----- UPDATE -----
+class AgendaCompromissosUpdate(UpdateView):
+    pass

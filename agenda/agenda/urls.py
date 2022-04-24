@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views
+from core.views import AgendaCompromissosCreate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.index)
+    path('home/', AgendaCompromissosCreate.as_view(), name='home'),
 ]

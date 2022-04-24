@@ -8,7 +8,7 @@ STATUS_CHOICES = (
     ('c', 'Cancelado')
 )
 
-class AgendaCompromissos(forms.Form):
+class AgendaCompromissos1(forms.Form):
     compromisso = forms.CharField(max_length=255)
     data = forms.DateField(required=True)
     hora_inicio = forms.TimeField(required=True)
@@ -16,4 +16,7 @@ class AgendaCompromissos(forms.Form):
     local = forms.CharField(max_length=255)
     status = forms.ChoiceField(choices=STATUS_CHOICES)
     observacoes = forms.CharField(required=False)
+
+    class Meta:
+        db_table = 'AgendaCompromissos'
 
