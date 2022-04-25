@@ -31,4 +31,6 @@ class AgendaCompromissosUpdate(UpdateView):
 
 #----- DELETE -----
 class AgendaCompromissosDelete(DeleteView):
-    pass
+    model = AgendaCompromissos
+    template_name = 'delete.html'
+    success_url = reverse_lazy('view')

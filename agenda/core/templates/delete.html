@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Deletar compromisso {% endblock %}
+
+{% block content %}
+<h2>Deletar compromisso</h2>
+<p class="lead">
+    Confirme para excluir compromisso permanentemente.
+</p>
+
+<hr>
+
+
+<form action="." method="POST">
+
+    <p>
+        Deseja excluir o compromisso: <strong> {{ object.compromisso }} </strong>
+    </p>
+        
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-danger">Deletar compromisso</button>
+</form>    
+
+
+{% endblock %}
