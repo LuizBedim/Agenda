@@ -14,20 +14,11 @@
         <h1>Registrar compromisso</h1>
     </header>
     <section>
-        <form action="." method="POST">
+        <form action="" method="POST">
             
             {% csrf_token %}
 
-            Compromisso: {{ form.compromisso }} 
-            {{ form.slug }} <br>    
-            Data: {{ form.data }} <br>
-            Hora de início: {{ form.hora_inicio }} <br>
-            Hora do Término: {{ form.hora_termino }} <br>
-            Local: {{ form.local }} <br>
-            Status: {{ form.status }} <br>
-            Observações: {{ form.observacoes }} <br>
-
-
+            {{ form }}
 
             <button type="submit" class="btn btn-primary">Registrar compromisso</button>
         </form>

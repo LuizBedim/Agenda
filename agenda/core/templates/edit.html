@@ -18,15 +18,9 @@
             
             {% csrf_token %}
 
-            Compromisso: {{ form.compromisso }} <br>
-            Data: {{ form.data }} <br>
-            Hora de início: {{ form.hora_inicio }} <br>
-            Hora do Término: {{ form.hora_termino }} <br>
-            Local: {{ form.local }} <br>
-            Status: {{ form.status }} <br>
-            Observações: {{ form.observacoes }} <br>
+            {{ form }}
 
-            <button type="submit" class="btn btn-primary">Editar compromisso</button>
+            <button type="submit" class="btn btn-primary">Modificar compromisso</button>
         </form>
     </section>
 </body>

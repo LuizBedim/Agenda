@@ -34,6 +34,7 @@ class AgendaCompromissosUpdate(UpdateView):
         context['botao'] = 'Modificar compromisso'
 
         return context
+
 #----- DELETE -----
 class AgendaCompromissosDelete(DeleteView):
     model = AgendaCompromissos

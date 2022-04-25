@@ -1,28 +1,37 @@
-{% extends "base.html" %}
+{% load static %}
 
-{% block title %} Deletar compromisso {% endblock %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar compromisso</title>
+    <link href="{% static 'css/delete.css' %}" rel="stylesheet">
+</head>
 
-{% block content %}
-<h2>Deletar compromisso</h2>
-<p class="lead">
-    Confirme para excluir compromisso permanentemente.
-</p>
+<body>
+    <header>
+        <h1>Deletar compromisso</h1>
+    </header>
+    <div class="delete">
+        <p class="lead">
+            Confirme para excluir compromisso permanentemente.
+        </p>
 
-<hr>
-
-
-<form action="." method="POST">
-
-    <p>
-        Deseja excluir o compromisso: <strong> {{ object.compromisso }} </strong>
-    </p>
-        
-    {% csrf_token %}
-
-    {{ form.as_p }}
-
-    <button type="submit" class="btn btn-danger">Deletar compromisso</button>
-</form>    
+        <hr>
 
 
-{% endblock %}
+        <form action="." method="POST">
+
+            <p>
+                Deseja excluir o compromisso: <strong> {{ object.compromisso }} </strong>
+            </p>
+                
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-danger">Confirmar exclusão</button>
+        </form>
+    </div>    
+</body>
+</html>
