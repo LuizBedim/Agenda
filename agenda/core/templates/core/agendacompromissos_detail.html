@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} {{ agendacompromissos.compromisso }} {% endblock %}
+
+{% block content %}
+    <h2>{{ agendacompromissos.compromisso }}</h2>
+    <p class="date">
+        Data: {{ agendacompromissos.data}} <br>
+        Hora do início: {{ agendacompromissos.hora_inicio}} <br>
+        Hora do término: {{ agendacompromissos.hora_termino}} <br>
+        Local: {{ agendacompromissos.local}} <br>
+        Observações {{ agendacompromissos.observacoes}} <br>
+    </p>
+
+{% endblock %}

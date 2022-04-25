@@ -1,6 +1,6 @@
 
 from django.db import models
-
+from django.urls import reverse
 
 class AgendaCompromissos(models.Model):
     Agendado = 1
@@ -23,6 +23,6 @@ class AgendaCompromissos(models.Model):
 
     def __str__(self):
         return self.compromisso
-    
+
     class Meta:
         db_table = 'AgendaCompromissos'

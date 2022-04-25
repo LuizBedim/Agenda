@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0.699);
+    color: #000000;
+    font-family: sans-serif;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    margin-bottom: 30px;
+    outline: unset;
+}
+
+form {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}

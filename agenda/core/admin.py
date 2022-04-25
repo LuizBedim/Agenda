@@ -5,4 +5,3 @@ from core.models import AgendaCompromissos
 @admin.register(AgendaCompromissos)
 class AgendaCompromissosAdmin(admin.ModelAdmin):
     list_display = ('compromisso', 'data', 'hora_inicio', 'hora_termino', 'local')
-   

@@ -1,16 +1,49 @@
-{% extends "base.html" %}
+{% load static %}
 
-{% block title %} Compromissos cadastrados {% endblock %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda de compromissos</title>
+    <link href="{% static 'css/style_list.css' %}" rel="stylesheet">
+</head>
 
-{% block content %}
-    {% for agendacompromissos in agendacompromissos_list %}
-        {{ agendacompromissos.compromisso }} 
-        {{ agendacompromissos.data }}
-        {{ agendacompromissos.hora_inicio }}
-        {{ agendacompromissos.hora_termino }}
-        {{ agendacompromissos.local }}  
-        {{ agendacompromissos.observacoes }} 
-        <br>
+<body>
+    <header>
+        <h1>Agenda de compromissos</h1>
+    </header>
+    <a href="{% url 'home' %}" class="cadas">Cadastrar compromisso</a>
+    <div class="view">
+        <table>
+            <tr>
+                <th>Compromisso</th>
+                <th>Data</th>
+                <th>Hora de início</th>
+                <th>Hora do término</th>
+                <th>Local</th>
+                <th>Observações</th>
+                <th>Opções</th>
+            </tr>
 
-    {% endfor %}
-{% endblock %}
+            {% for agendacompromissos in agendacompromissos_list %}
+            <tr>
+                <td>{{ agendacompromissos.compromisso }}</td>
+                <td>{{ agendacompromissos.data}}</td>
+                <td>{{ agendacompromissos.hora_inicio }}</td>
+                <td>{{ agendacompromissos.hora_termino}}</td>
+                <td>{{ agendacompromissos.local}}</td>
+                <td>{{ agendacompromissos.observacoes}}</td>
+                <td>
+                    <a href="{% url 'edit' agendacompromissos.pk %}" class="edit">Editar</a>
+                    <a href="{% url 'delete' agendacompromissos.pk %}" class="danger">Excluir</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7">Nenhum compromisso</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
