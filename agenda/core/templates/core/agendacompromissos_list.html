@@ -5,7 +5,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Agenda de compromissos</title>
-    <link href="{% static 'css/style_list.css' %}" rel="stylesheet">
+    <!-- <link href="{% static 'css/style_list.css' %}" rel="stylesheet"> -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            }
+
+        body {
+            background-color: rgba(141, 135, 135, 0.1);
+            font-family: sans-serif;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(74, 71, 252, 0.76);
+            color: #000000;
+            font-family: sans-serif;
+        }
+
+        a.cadas {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            font-size: 27px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: rgb(47, 201, 0);
+        }
+
+        div.view {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+
+        table {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+            width: 85%;
+        }
+
+        td, th {
+            border: 1px solid #000000;
+            text-align: center;
+        }
+
+        a.edit {
+            color: rgb(201, 171, 0);
+            text-decoration: none;
+            margin-right: 3px;
+        }
+
+        a.danger {
+            color:rgb(201, 0, 0);
+            text-decoration: none;
+            margin-left: 3px;
+        }
+
+        p.status {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,6 +81,9 @@
         <h1>Agenda de compromissos</h1>
     </header>
     <a href="{% url 'home' %}" class="cadas">Cadastrar compromisso</a>
+
+    <p class="status">Status: 1 - Agendado, 2 - Realizado, 3 - Cancelado</p>
+
     <div class="view">
         <table>
             <tr>
@@ -20,6 +91,7 @@
                 <th>Data</th>
                 <th>Hora de início</th>
                 <th>Hora do término</th>
+                <th>Status</th>
                 <th>Local</th>
                 <th>Observações</th>
                 <th>Opções</th>
@@ -31,6 +103,7 @@
                 <td>{{ agendacompromissos.data}}</td>
                 <td>{{ agendacompromissos.hora_inicio }}</td>
                 <td>{{ agendacompromissos.hora_termino}}</td>
+                <td>{{ agendacompromissos.status }}</td>
                 <td>{{ agendacompromissos.local}}</td>
                 <td>{{ agendacompromissos.observacoes}}</td>
                 <td>
@@ -40,7 +113,7 @@
             </tr>
             {% empty %}
             <tr>
-                <td colspan="7">Nenhum compromisso</td>
+                <td colspan="8">Nenhum compromisso</td>
             </tr>
             {% endfor %}
         </table>

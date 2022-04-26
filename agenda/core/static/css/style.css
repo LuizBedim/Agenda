@@ -53,3 +53,9 @@ textarea {
     margin-bottom: 15px;
     background-color: rgba(141, 135, 135, 0.1);
 }
+
+button {
+    min-width: 450px;
+    font-weight: bold;
+    min-height: 25px;
+}

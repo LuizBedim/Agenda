@@ -1,31 +1,89 @@
-{% extends "base.html" %}
+{% load static %}
 
-{% block title %} Deletar compromisso {% endblock %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar compromisso</title>
+    <!-- <link href="{% static 'css/delete.css' %}" rel="stylesheet"> -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            }
 
-{% block content %}
-<h2>Deletar compromisso</h2>
-<p class="lead">
-    Confirme para excluir compromisso permanentemente.
-</p>
+        body {
+            background-color: rgba(141, 135, 135, 0.1);
+            font-family: sans-serif;
+        }
 
-<hr>
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(74, 71, 252, 0.76);
+            color: #000000;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            margin-bottom: 30px;
+            flex-direction: column;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        button {
+            min-width: 250px;
+            min-height: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Deletar compromisso</h1>
+    </header>
+
+    <form action="." method="POST">
+        <h2>
+            Confirme para excluir compromisso permanentemente.
+        </h2>
+
+        <p>
+            Deseja excluir o compromisso: <br> <strong> {{ object.compromisso }} </strong>, do dia: <strong> {{ object.data }} </strong> com início as <strong> {{ object.hora_inicio }} </strong> e término as <strong> {{ object.hora_termino }} </strong> no local: <strong> {{ object.local }} </strong>
+        </p>
+                
+        {% csrf_token %}
+
+        {{ form }}
+
+        <a href="{% url 'view' %}">
+            <button type="submit" class="btn btn-danger">Deletar compromisso</button>
+        </a>
+    </form>    
+
+</body>
+</html>
 
 
-<form action="." method="POST">
 
-    <p>
-        Deseja excluir o compromisso: <strong> {{ object.compromisso }} </strong>
-    </p>
-        
-    {% csrf_token %}
-
-    {{ form }}
-
-    <a href="{% url 'view' %}">
-        <button type="submit" class="btn btn-danger">Deletar compromisso</button>
-    </a>
-</form>    
-
-
-{% endblock %}
 
