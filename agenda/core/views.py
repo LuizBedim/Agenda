@@ -22,26 +22,15 @@ class AgendaCompromissosCreate(CreateView):
     template_name = 'index.html'
     success_url = reverse_lazy('view')
 
+#----- UPDATE -----
 class AgendaCompromissosUpdate(UpdateView):
     model = AgendaCompromissos
     fields = ['compromisso', 'data', 'hora_inicio', 'hora_termino', 'local', 'status', 'observacoes']
     template_name = 'edit.html'
     success_url = reverse_lazy('view')
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['botao'] = 'Modificar compromisso'
-
-        return context
-
 #----- DELETE -----
 class AgendaCompromissosDelete(DeleteView):
     model = AgendaCompromissos
     template_name = 'delete.html'
     success_url = reverse_lazy('view')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['botao'] = 'Excluir compromisso'
