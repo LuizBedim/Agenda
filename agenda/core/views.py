@@ -22,6 +22,7 @@ class AgendaCompromissosCreate(CreateView):
     template_name = 'index.html'
     success_url = reverse_lazy('view')
 
+#----- UPDATE -----
 class AgendaCompromissosUpdate(UpdateView):
     model = AgendaCompromissos
     fields = ['compromisso', 'data', 'hora_inicio', 'hora_termino', 'local', 'status', 'observacoes']
