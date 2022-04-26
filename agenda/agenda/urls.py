@@ -9,5 +9,4 @@ urlpatterns = [
     path('view/', AgendaCompromissosListView.as_view(), name='view'),
     path('delete/<int:pk>/', AgendaCompromissosDelete.as_view(), name='delete'),
     path('edit/<int:pk>/', AgendaCompromissosUpdate.as_view(), name='edit'),
-
-
+]
