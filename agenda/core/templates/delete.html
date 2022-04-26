@@ -19,9 +19,11 @@
         
     {% csrf_token %}
 
-    {{ form.as_p }}
+    {{ form }}
 
-    <button type="submit" class="btn btn-danger">Deletar compromisso</button>
+    <a href="{% url 'view' %}">
+        <button type="submit" class="btn btn-danger">Deletar compromisso</button>
+    </a>
 </form>    
 
 

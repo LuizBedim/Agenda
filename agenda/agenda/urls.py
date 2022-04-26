@@ -24,7 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', AgendaCompromissosCreate.as_view(), name='home'),
     path('view/', AgendaCompromissosListView.as_view(), name='view'),
-    path('edit/<int:pk>', AgendaCompromissosUpdate.as_view(), name='edit'),
-    path('delete/<int:pk>', AgendaCompromissosDelete.as_view(), name='delete'),
-    path('<slug:slug>/', AgendaCompromissosDetailView.as_view(), name='detail'),
+    path('delete/<int:pk>/', AgendaCompromissosDelete.as_view(), name='delete'),
+    path('edit/<int:pk>/', AgendaCompromissosUpdate.as_view(), name='edit'),
 ]

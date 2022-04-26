@@ -5,29 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Editar compromisso</title>
-    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'css/edit.css' %}" rel="stylesheet">
 </head>
-
 
 <body>
     <header>
         <h1>Registrar compromisso</h1>
     </header>
     <section>
-        <form action="." method="POST">
-            
-            {% csrf_token %}
+        <div class="edit">
+            <form action="." method="POST">
+                
+                {% csrf_token %}
 
-            Compromisso: {{ form.compromisso }} <br>
-            Data: {{ form.data }} <br>
-            Hora de início: {{ form.hora_inicio }} <br>
-            Hora do Término: {{ form.hora_termino }} <br>
-            Local: {{ form.local }} <br>
-            Status: {{ form.status }} <br>
-            Observações: {{ form.observacoes }} <br>
+                {{ form }}
+                
+                <a href="{% url 'view' %}">
+                    <button type="submit">Editar compromisso</button>
+                </a>
 
-            <button type="submit" class="btn btn-primary">Editar compromisso</button>
-        </form>
+            </form>
+        </div>
     </section>
 </body>
 </html>
