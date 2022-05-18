@@ -22,8 +22,8 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            background-color: rgba(74, 71, 252, 0.76);
-            color: #000000;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
             font-family: sans-serif;
         }
 
@@ -34,9 +34,11 @@
             font-family: sans-serif;
             font-size: 27px;
             margin-top: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
+            border: 2px solid #000000;
+            border-radius: 2%;
             text-decoration: none;
-            color: rgb(47, 201, 0);
+            color: rgba(0, 0, 0, 0.7);
         }
 
         div.view {
@@ -81,8 +83,6 @@
         <h1>Agenda de compromissos</h1>
     </header>
     <a href="{% url 'home' %}" class="cadas">Cadastrar compromisso</a>
-
-    <p class="status">Status: 1 - Agendado, 2 - Realizado, 3 - Cancelado</p>
 
     <div class="view">
         <table>
