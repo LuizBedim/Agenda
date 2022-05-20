@@ -15,8 +15,8 @@ class AgendaCompromissos(models.Model):
     
     compromisso = models.CharField(max_length=255, unique=True)
     data = models.DateField()
-    hora_inicio = models.TimeField(unique=True)
-    hora_termino = models.TimeField(unique=True)
+    hora_inicio = models.TimeField()
+    hora_termino = models.TimeField()
     local = models.CharField(max_length=255)
     status = models.IntegerField(choices=STATUS_CHOICES)
     observacoes = models.TextField(blank=True, null=True)
